@@ -27,7 +27,6 @@ function addClickEvent() {
   pokemons.forEach((el) => {
     el.addEventListener("click", () => {
       localStorage.setItem("current", JSON.stringify(el.children[1].innerHTML));
-      console.log(JSON.parse(localStorage.getItem("el.children[1].innerHTML")));
     });
   });
 }
