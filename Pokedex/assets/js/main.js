@@ -23,7 +23,6 @@ function convertPokemonToLi(pokemon) {
 
 function addClickEvent() {
   const pokemons = Array.from(document.getElementsByClassName("pokemon"));
-  console.log(pokemons);
 
   pokemons.forEach((el) => {
     el.addEventListener("click", () => {

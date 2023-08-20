@@ -17,4 +17,3 @@ function mudaDetalhe() {
 
 const detalhe = document.querySelector(".details");
 detalhe.innerHTML = mudaDetalhe();
-// console.log(mudaDetalhe());
