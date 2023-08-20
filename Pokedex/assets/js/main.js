@@ -27,7 +27,8 @@ function addClickEvent() {
 
   pokemons.forEach((el) => {
     el.addEventListener("click", () => {
-      console.log(JSON.parse(localStorage.getItem(el.children[1].innerHTML)));
+      localStorage.setItem("current", JSON.stringify(el.children[1].innerHTML));
+      console.log(JSON.parse(localStorage.getItem("el.children[1].innerHTML")));
     });
   });
 }
@@ -40,7 +41,7 @@ function loadPokemonItems(offset, limit) {
           photo: pokemon.photo,
         };
         localStorage.setItem(pokemon.name, JSON.stringify(obj));
-        return `<li class="pokemon ${pokemon.type}">
+        return `<a href="detalhe.html"><li class="pokemon ${pokemon.type}">
         <span class="number">#${pokemon.number}</span>
         <span class="name">${pokemon.name}</span>
         
@@ -52,7 +53,7 @@ function loadPokemonItems(offset, limit) {
           <img src="${pokemon.photo}"
           alt="${pokemon.name}">
         </div>
-        </li>`;
+        </li></a>`;
       })
       .join("");
     pokemonList.innerHTML += newHtml; //mapeia os pokemons para uma lista de elementos li, junta esses elementos em uma string só e atribui isso ao html da ol de pokemons
